@@ -19,32 +19,14 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 
 function validateInput(testInput) {
 
-    //dont need an alert?
-    let form = document.querySelector("form");
-    form.addEventListener("submit", function (event) {
-        let pilotNameInput = document.querySelector("input[name=pilotName]");
-        let copilotNameInput = document.querySelector("input[name=copilotName]");
-        let fuelLevelInput = document.querySelector("input[name=fuelLevel]")
-        let cargoMassInput = document.querySelector("input[name=cargoMass")
-        if (pilotNameInput.vaue === 0 || copilotNameInput.value === 0 || fuelLevelInput.value === 0 || cargoMassInput.value === 0) {
-            alert("Fields must contain an entry")
-            event.preventDefault();
-
-        }
-
-        // let myStr = "" 
-        // if (myStr.length === 0) {
-        //     console.log("this is empty")
-        // }
-        // let testInput = document.forms["form"]["fuelLevel"].value;
-        // if (isNaN(x)) {
-
-        // alert("Must input numbers");
-
-        // return false;
-    })
-}
-
+    if (testInput.trim() === "") {
+        return 'Empty';
+    } if (isNaN(Number(testInput))) {
+        return 'Not a Number';
+    } else 
+        return "is a number"
+ }
+console.log(validateInput("banan5"));
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
