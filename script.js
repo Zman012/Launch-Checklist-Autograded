@@ -1,5 +1,7 @@
 // Write your JavaScript code here!
 
+const { formSubmission } = require("./scriptHelper");
+
 window.addEventListener("load", function () {
 
     let form = document.querySelector("form");
@@ -12,7 +14,8 @@ window.addEventListener("load", function () {
             alert("All fields are required!");
             // stop the form submission
             event.preventDefault();
-        }
+        } //else {formSubmission}
+
 });
 
 let listedPlanets;
