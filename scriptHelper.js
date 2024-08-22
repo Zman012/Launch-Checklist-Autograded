@@ -32,8 +32,8 @@ function validateInput(testInput) {
 // console.log(validateInput(""))
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    document.getElementById("pilotStatus").innerHTML = `Pilot": ${pilot} is ready for launch`
-    document.getElementById("copilotStatus").innerHTML = `Co-pilot: ${copilot} is ready for launch`
+    document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot} is ready for launch`
+    document.getElementById("copilotStatus").innerHTML = `Co-pilot ${copilot} is ready for launch`
 
 
 
@@ -41,15 +41,15 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         console.log("Test");
         document.getElementById("faultyItems").style = "visble"
         document.getElementById("fuelStatus").innerHTML = "Fuel level too low for launch"
-        document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch"
-        document.getElementById("launchStatus").style.backgroundColor = "red"
+        document.getElementById("launchStatus").innerHTML = "Shuttle Not Ready for Launch"
+        document.getElementById("launchStatus").style.color = "red"
     }
 
     if (cargoLevel > 10000) {
         document.getElementById("faultyItems").style = "visble"
         document.getElementById("cargoStatus").innerHTML = "Cargo mass too heavy for launch"
-        document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch"
-        document.getElementById("launchStatus").style.backgroundColor = "red"
+        document.getElementById("launchStatus").innerHTML = "Shuttle Not Ready for Launch"
+        document.getElementById("launchStatus").style.color = "red"
     }
 
 
