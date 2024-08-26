@@ -4,34 +4,36 @@ require('cross-fetch/polyfill');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     // Here is the HTML formatting for our mission target div.
-    /*
+
+    const addDestiny = document.getElementById("missionTarget");
+    addDestiny.innerHTML = `
                  <h2>Mission Destination</h2>
                  <ol>
-                     <li>Name: </li>
-                     <li>Diameter: </li>
+                     <li>Name: ${name}</li>
+                     <li>Diameter: ${diameter}</li>
                      <li>Star: ${star}</li>
-                     <li>Distance from Earth: </li>
-                     <li>Number of Moons: </li>
+                     <li>Distance from Earth: ${distance}</li>
+                     <li>Number of Moons: ${moons} </li>
                  </ol>
-                 <img src="">
-    */
- }
- 
- function validateInput(testInput) {
+                 <img src="https://solarsystem.nasa.gov/system/resources/detail_files/16278_PIA20016.jpg">
+    `;
+}
+
+function validateInput(testInput) {
     const str = String(testInput).trim() //created str because if logic included .trim() to check for a number it would not work - trim is a method for only strings
 
     if (str === "") {
         return 'Empty';
-    } else if (isNaN(Number(testInput))) {
+    } else if (isNaN(testInput)) {
         return 'Not a Number';
-    } else 
+    } else
         return "Is a Number"
- }
- 
- function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+}
+
+function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot} is ready for launch`
     document.getElementById("copilotStatus").innerHTML = `Co-pilot ${copilot} is ready for launch`
-    
+
 
 
 
@@ -64,23 +66,26 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
     }
 
 
- }
- 
- 
- async function myFetch() {
-     let planetsReturned;
- 
-     planetsReturned = await fetch().then( function(response) {
-         });
- 
-     return planetsReturned;
- }
- 
- function pickPlanet(planets) {
- }
- 
- module.exports.addDestinationInfo = addDestinationInfo;
- module.exports.validateInput = validateInput;
- module.exports.formSubmission = formSubmission;
- module.exports.pickPlanet = pickPlanet; 
- module.exports.myFetch = myFetch;
+}
+
+
+async function myFetch() {
+    let planetsReturned;
+
+    planetsReturned = await fetch().then(function (response) {
+    });
+
+    return planetsReturned;
+}
+
+function pickPlanet(planets) {
+    let index = Math.floor(Math.random() * planets.length);
+    return planets[index];
+
+}
+
+module.exports.addDestinationInfo = addDestinationInfo;
+module.exports.validateInput = validateInput;
+module.exports.formSubmission = formSubmission;
+module.exports.pickPlanet = pickPlanet;
+module.exports.myFetch = myFetch;
