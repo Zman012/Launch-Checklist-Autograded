@@ -50,7 +50,7 @@ window.addEventListener("load", function () {
             selectedPlanet.star, 
             selectedPlanet.distance, 
             selectedPlanet.moons, 
-            selectedPlanet.imageUrl
+            selectedPlanet.image
         );
     })
 

@@ -15,7 +15,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                      <li>Distance from Earth: ${distance}</li>
                      <li>Number of Moons: ${moons} </li>
                  </ol>
-                 <img src="https://solarsystem.nasa.gov/system/resources/detail_files/16278_PIA20016.jpg">
+                 <img src="${imageUrl}">
     `;
 }
 
